@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.powergen.customerservice.model.registration">
+<class name="Customer" table="CUSTOMER">
+        <id name="id" column="c_id">
+            <generator class="increment"/>
+        </id>
+        <property name="uname"/>
+        <property name="password"/>
+        <property name="email"/>
+        <property name="phoneNum"/>
+        <property name="serv_id"/>
+    </class>
+</hibernate-mapping>
