@@ -25,7 +25,7 @@ public class CustomerRegistrationController {
 	private CustomerRegistrationService customerServHandler;
 
 		@RequestMapping(value = "/register", method = RequestMethod.POST)
-		public ModelAndView controlRegistration(@ModelAttribute("registerPage") Customer customer, ModelMap model) {
+		public ModelAndView customerRegistration(@ModelAttribute("registerPage") Customer customer, ModelMap model) {
 			
 			String customerServiceDetails = customerServHandler.sendCustomer(customer);
 			
