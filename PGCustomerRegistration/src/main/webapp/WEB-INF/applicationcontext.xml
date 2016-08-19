@@ -7,23 +7,14 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
 
-	<context:component-scan
-		base-package="com.powergen.customerservice.controller.registration" />
-	<context:annotation-config />
-
-	<import resource="JMSSender.xml" />
-	<import resource="hibernate.cfg.xml" />
-	<import resource="applicationcontext.xml" />
-	<bean id="viewResolver"
-		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/WEB-INF/jsp/" />
-		<property name="suffix" value=".jsp" />
+	<bean id="custServiceDao"
+		class="com.powergen.customerservice.dao.registration.CustomerRegistrationDao">
 	</bean>
-
-
-	<mvc:resources location="/resources/" mapping="/resources/**" />
-
-	<mvc:annotation-driven />
-
-
+	<bean id="queueSender"
+		class="com.powergen.customerservice.jms.registration.JmsQueueSender" />
+	<bean id="customerServHandler"
+		class="com.powergen.customerservice.service.registration.CustomerRegistrationService">
+		<constructor-arg name="custServiceDao" ref="custServiceDao" />
+		<constructor-arg name="queueSender" ref="queueSender" />
+	</bean>
 </beans>
