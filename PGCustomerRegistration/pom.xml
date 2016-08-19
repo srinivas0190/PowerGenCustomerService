@@ -246,7 +246,7 @@
 
 	</dependencies>
 	<build>
-		<finalName>CustomerServiceManager</finalName>
+		<finalName>PGCustomerRegistration</finalName>
 		<plugins>
 
 			<plugin>
