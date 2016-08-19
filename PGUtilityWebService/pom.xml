@@ -4,7 +4,7 @@
 	<artifactId>PGUtilityWebService</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>UtilityWebService Maven Webapp</name>
+	<name>PGUtilityWebService Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 
 
