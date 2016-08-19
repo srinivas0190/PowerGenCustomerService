@@ -79,7 +79,7 @@ public class CustomerRegistrationService {
 
 			Client client = Client.create();
 
-			WebResource webResource = client.resource("http://localhost:8080/UtilityWebService/RestWS/cust/" + c_id);
+			WebResource webResource = client.resource("http://localhost:8080/PGUtilityWebService/RestWS/cust/" + c_id);
 
 			ClientResponse response = webResource.accept("application/json").get(ClientResponse.class);
 

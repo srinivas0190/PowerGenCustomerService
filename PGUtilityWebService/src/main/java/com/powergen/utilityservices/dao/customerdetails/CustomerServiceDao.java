@@ -25,7 +25,8 @@ public class CustomerServiceDao{
 		try {
 			
 			customer = (Customer)session.get(Customer.class, c_id);
-
+			
+			
 		} catch (HibernateException e) {
 			e.printStackTrace();
 			session.flush();

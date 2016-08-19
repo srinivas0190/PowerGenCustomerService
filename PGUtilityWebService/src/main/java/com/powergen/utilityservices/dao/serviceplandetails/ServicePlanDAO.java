@@ -30,6 +30,7 @@ public class ServicePlanDAO {
 			
 			serviceList = session.createQuery("from ServicePlan").list();
 			
+			
 		} catch (HibernateException e) {
 			e.printStackTrace();
 			session.flush();

@@ -29,8 +29,7 @@ public class MessageReceiverDao {
 			customer.setServ_id(serv_id);
 
 			session.update(customer);
-
-
+			
 		} catch (HibernateException e) {
 			e.printStackTrace();
 
