@@ -29,8 +29,9 @@ public class CustomerServiceDao{
 			
 		} catch (HibernateException e) {
 			e.printStackTrace();
-			session.flush();
+			
 		}
+		//session.flush();
 		return customer;	
 	}
 }

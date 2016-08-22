@@ -20,21 +20,23 @@ public class MessageReceiverDao {
 	 */
 	public void updateCustomerService(int customerId, int serv_id) {
 
-		Session session = HibernateUtil.getSession();
+		Session session = HibernateUtil.getCurrentSession();
 
 		try {
-			
+			session.beginTransaction();
 			Customer customer = (Customer) session.get(Customer.class, customerId);
 
 			customer.setServ_id(serv_id);
 
 			session.update(customer);
 			
+			session.getTransaction().commit();
 		} catch (HibernateException e) {
 			e.printStackTrace();
 
 			session.flush();
 		}
+		
 		
 	}
 }

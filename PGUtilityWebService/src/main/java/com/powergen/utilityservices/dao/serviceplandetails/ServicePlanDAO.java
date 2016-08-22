@@ -33,9 +33,9 @@ public class ServicePlanDAO {
 			
 		} catch (HibernateException e) {
 			e.printStackTrace();
-			session.flush();
+			
 		} 
-		
+		//session.flush();
 		if(serviceList.isEmpty()){
 			return null;
 		}

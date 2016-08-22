@@ -39,8 +39,9 @@ public class CustomerRegistrationDao {
 		} catch (HibernateException e) {
 			
 			e.printStackTrace();
-			session.close();
+			
 		} 
+		//session.flush();
 		return c_Id;
 	}
 }
